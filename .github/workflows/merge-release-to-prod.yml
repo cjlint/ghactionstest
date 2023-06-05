@@ -13,7 +13,7 @@ jobs:
           script: |
             github.rest.git.updateRef({
               ...context.repo,
-              ref: 'refs/heads/prod',
+              ref: 'heads/prod',
               sha: context.sha,
               force: true,
             });
