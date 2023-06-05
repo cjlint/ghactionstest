@@ -5,14 +5,16 @@ on:
 
 jobs:
   release-to-prod:
-    - uses: actions/github-script@v6
-      id: release-to-prod
-      with:
-        script: |
-          github.rest.repos.merge({
-            context.repo().owner,
-            context.repo().repo,
-            'prod',
-            context.sha,
-          });
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        id: release-to-prod
+        with:
+          script: |
+            github.rest.repos.merge({
+              context.repo().owner,
+              context.repo().repo,
+              'prod',
+              context.sha,
+            });
 
