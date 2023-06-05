@@ -11,10 +11,10 @@ jobs:
         id: release-to-prod
         with:
           script: |
-            github.rest.repos.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              base: 'prod',
-              head: context.sha,
+            github.rest.git.updateRef({
+              ...context.repo,
+              ref: 'refs/heads/prod',
+              sha: context.sha,
+              force: true,
             });
 
