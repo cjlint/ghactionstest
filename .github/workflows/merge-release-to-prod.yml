@@ -1,0 +1,16 @@
+name: Publish prod release
+on:
+  release:
+    types: [published]
+
+jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Merge branch
+        uses: devmasx/merge-branch@1.4.0
+        with:
+          type: now
+          target_branch: prod
+          github_token: ${{ secrets.GITHUB_TOKEN }}
