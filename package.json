@@ -1,0 +1,11 @@
+{
+  "name": "ghactionstest",
+  "version": "1.0.0",
+  "repository": "git@github.com:cjlint/ghactionstest.git",
+  "author": "CJ Linton <clinton.2742@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "release": "node scripts/release.js"
+  }
+}
